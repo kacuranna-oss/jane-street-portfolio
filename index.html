@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anna Katsur — Selected work for Jane Street</title>
+<meta name="description" content="Brand and graphic designer for technical audiences. Eight case studies for the Jane Street Graphic Designer role.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://player.vimeo.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#000;--muted:#6b6b6b;--line:#d9d9d9;--bg:#fff;--tile:#f3f3f3;--gutter:24px;--gap:16px;--max:1440px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.45;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--muted)}
+img,video{display:block;max-width:100%}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+/* hero */
+.hero{padding-top:40px;padding-bottom:72px}
+.hero p{font-size:clamp(26px,2.6vw,38px);line-height:1.22;letter-spacing:-.01em;max-width:860px}
+.hero b{font-weight:700}
+.hero .aside{font-family:"JetBrains Mono",monospace;font-size:15px;line-height:1.6;color:var(--muted);max-width:640px;margin-top:28px;letter-spacing:0}
+.index{margin-top:48px;border-top:1px solid var(--ink);font-family:"JetBrains Mono",monospace;font-size:14px}
+.index a{display:grid;grid-template-columns:48px 1fr auto;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.index a:hover{color:var(--ink);background:var(--tile)}
+.index span:first-child,.index span:last-child{color:var(--muted)}
+
+/* case */
+.case{border-top:1px solid var(--ink);padding-top:28px;padding-bottom:120px}
+.case h2{font-size:clamp(30px,3.4vw,52px);line-height:1.05;font-weight:700;letter-spacing:-.02em;min-height:1.05em}
+.case h2 a{text-decoration:none}
+.case h2 a:hover{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px}
+.meta{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--muted);margin:14px 0 40px}
+.lede{font-size:clamp(20px,1.8vw,26px);line-height:1.3;max-width:860px;margin-bottom:48px}
+.caret{display:inline-block;width:.5em;height:.9em;margin-left:.06em;background:var(--ink);vertical-align:-.08em;animation:blink 1s steps(1) infinite}
+.caret.done{animation:blink 1s steps(1) 3 forwards}
+@keyframes blink{50%{opacity:0}100%{opacity:0}}
+
+.block{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;border-top:1px solid var(--line);padding:24px 0 40px}
+.block>h3{font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:500}
+.block>h3 span{color:var(--muted);margin-right:10px}
+dl{display:grid;gap:22px;max-width:760px}
+dt{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);margin-bottom:4px}
+dd{font-size:18px;line-height:1.45}
+dd b{font-weight:600}
+dd ol,dd ul{padding-left:1.2em;display:grid;gap:6px}
+code{font-family:"JetBrains Mono",monospace;font-size:.88em;background:var(--tile);padding:1px 5px}
+
+.media{display:grid;gap:var(--gap);margin:8px 0 40px}
+.frame{position:relative;width:100%;background:var(--tile);overflow:hidden}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.frame img,.frame video{width:100%;height:100%;object-fit:cover}
+.r169{aspect-ratio:16/9}.r1610{aspect-ratio:16/10}.r34{aspect-ratio:3/4}.r23{aspect-ratio:2/3}.r32{aspect-ratio:3/2}
+.cols2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.cols4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+.cup2{display:grid;grid-template-columns:1fr 2fr;gap:var(--gap)}
+.white .frame{background:#fff;outline:1px solid #eee;outline-offset:-1px}
+figure figcaption{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.5;margin-top:10px}
+figure figcaption span{color:var(--muted);display:block}
+.mood img{width:100%;height:auto}
+.moodcap{list-style:none;position:relative;height:5.2em;margin-top:14px;font-size:clamp(14px,1.45vw,20px);line-height:1.15;font-weight:600;letter-spacing:-.01em}
+.moodcap li{position:absolute;left:var(--x);top:0;width:17%}
+@media (max-width:900px){.moodcap{height:auto;display:grid;gap:6px;font-size:15px;font-family:"JetBrains Mono",monospace;font-weight:400;counter-reset:c}.moodcap li{position:static;width:auto;counter-increment:c}.moodcap li::before{content:counter(c,decimal-leading-zero) "  ";color:var(--muted)}}
+.tiles{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr)}.tiles span{align-self:end;padding:0 0 8px 10px;font-family:"JetBrains Mono",monospace;font-size:clamp(10px,1vw,13px);letter-spacing:.04em;color:#000}
+.shot img{width:100%;height:auto}
+.stack{display:grid;gap:var(--gap)}
+.stack img{width:100%;height:auto;background:var(--tile)}
+
+.marquee{overflow:hidden;--h:340px;--speed:60s}
+.marquee .track{display:flex;gap:var(--gap);width:max-content;animation:scroll var(--speed) linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee .item{height:var(--h);flex:none;background:var(--tile)}
+.marquee .item img{height:100%;width:auto}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - var(--gap)/2))}}
+
+.why,.personal{border-top:1px solid var(--ink);padding-top:28px;padding-bottom:96px}
+.why p,.personal p{font-size:clamp(22px,2.1vw,30px);line-height:1.28;max-width:900px}
+.why b,.personal b{font-weight:700}
+.photos{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--gap);margin-top:48px}
+.contact{border-top:1px solid var(--ink);padding-top:28px;padding-bottom:64px;display:grid;grid-template-columns:repeat(2,minmax(0,280px));gap:var(--gutter);font-family:"JetBrains Mono",monospace;font-size:16px;line-height:1.5}
+.contact h4{font-size:14px;font-weight:700;letter-spacing:.06em;margin-bottom:12px}
+.contact a{display:block;text-decoration:underline}
+.contact .visa{grid-column:1/-1;font-size:14px;color:var(--muted);margin-top:24px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee{overflow-x:auto}.marquee .track{animation:none}.marquee .dup{display:none}.caret{display:none}}
+@media (max-width:1000px){.cols4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.block{grid-template-columns:1fr;gap:16px}.cols3,.cup2,.cols2{grid-template-columns:1fr}.marquee{--h:240px}.photos{grid-template-columns:repeat(3,1fr)}.case{padding-bottom:88px}}
+@media (max-width:560px){:root{--gutter:16px}.hero{padding-top:24px;padding-bottom:56px}.cols4{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.photos{grid-template-columns:repeat(2,1fr)}dd{font-size:17px}.index a{grid-template-columns:36px 1fr}.index span:last-child{display:none}}
+@media (max-width:900px){.media[style*="max-width:50%"]{max-width:none!important}}
+</style>
+</head>
+<body>
+
+<header class="wrap hero">
+  <p>Hi Jane Street, I’m Anna Katsur — a brand and graphic designer for technical audiences. 10+ years in tech design, five of them on the Yandex for Developers brand. Now at Mercuryo, a crypto fintech in London.</p>
+  <p class="aside">One thread runs through this work: I build visual systems from the logic of their audience — code syntax, puzzles, rules anyone can follow. Each case below follows the same order: brief, my part, craft, result.</p>
+  <nav class="index" aria-label="Projects">
+    <a href="#cup"><span>01</span><span>Yandex Cup</span><span>Concept · web · 2024</span></a>
+    <a href="#yfd"><span>02</span><span>Yandex for Developers</span><span>Brand system · 2021–</span></a>
+    <a href="#yatalks"><span>03</span><span>YaTalks 2021</span><span>Identity · stage</span></a>
+    <a href="#merch"><span>04</span><span>Yandex Welcome Pack</span><span>Merch system · production</span></a>
+    <a href="#decks"><span>05</span><span>Mercuryo Decks</span><span>Presentation system · AI</span></a>
+    <a href="#token"><span>06</span><span>Mercuryo at TOKEN2049 Singapore</span><span>Event · 2026</span></a>
+    <a href="#puzzle"><span>07</span><span>Jane Street puzzle page — redesign</span><span>Personal · UX</span></a>
+    <a href="#agm"><span>08</span><span>Bank AGM presentation</span><span>Data storytelling</span></a>
+  </nav>
+</header>
+
+<main>
+
+<!-- 01 YANDEX CUP -->
+<section class="wrap case" id="cup">
+  <h2 class="type"><a href="https://yandex.com/cup/" target="_blank" rel="noopener">Yandex Cup ↗</a></h2>
+  <p class="meta">Lead designer & art director · concept, web, logo system · 2024</p>
+  <p class="lede">An open programming championship. I turned its audience research into a radically plain, code-like identity — and defended it.</p>
+
+  <div class="block"><h3><span>01</span>Brief</h3><dl>
+    <div><dt>// project</dt><dd>Yandex’s open championship for developers: six tracks, from juniors to experts, with an offline final.</dd></div>
+    <div><dt>// objective</dt><dd>A flexible, recognisable visual language: every year looks different but reads as one series.</dd></div>
+    <div><dt>// challenge</dt><dd>Speak to very different people — curious beginners and olympiad veterans — who instantly spot fake “tech” design.</dd></div>
+  </dl></div>
+
+  <div class="media"><figure class="mood"><img src="img/new-cup-moodboard-1600.webp" srcset="img/new-cup-moodboard-960.webp 960w, img/new-cup-moodboard-1600.webp 1600w, img/new-cup-moodboard-2400.webp 2400w" sizes="(max-width:1440px) 100vw, 1392px" width="2548" height="1225" alt="Visual research moodboard in five columns" loading="lazy" decoding="async"><ol class="moodcap"><li style="--x:2.2%">Aesthetics of academic literature</li><li style="--x:21.35%">The beauty of a formal language that describes the world</li><li style="--x:40.35%">Aesthetics of printouts, scans and handouts</li><li style="--x:59.15%">Aesthetics of programming</li><li style="--x:82%">The beauty of harmony and elegant solutions</li></ol></figure></div>
+
+  <div class="block"><h3><span>02</span>My part</h3><dl>
+    <div><dt>// role</dt><dd>Lead designer and art director, author of the concept.</dd></div>
+    <div><dt>// i made</dt><dd>Audience research (interviews with developers → four archetypes), visual research, four concepts and their copy, the main website page and its animation, the logo constructor. A second designer did resizes; Yandex developers built the site from my files, and I reviewed every step.</dd></div>
+    <div><dt>// key decision</dt><dd>Push the most radical direction — <b>Ultra Clarity</b>, a protest against decorative design. It wasn’t accepted at first; I had to argue that this audience values precision over polish.</dd></div>
+  </dl></div>
+
+  <div class="block"><h3><span>03</span>Craft</h3><dl>
+    <div><dt>// four directions, four type principles</dt><dd>Each concept was shown as a live website, not a moodboard.</dd></div>
+  </dl></div>
+  <div class="media cols4">
+    <figure><div class="frame r1610"><img src="img/new-cup-v1-960.webp" width="1440" height="823" alt="Concept 01: condensed headline, italic monospace" loading="lazy" decoding="async"></div><figcaption>01 Hidden–Probable<span>Ultra-condensed headline edge to edge, italic monospace body, paragraphs linked like a flowchart.</span></figcaption></figure>
+    <figure><div class="frame r1610"><img src="img/new-cup-v2-960.webp" width="1440" height="900" alt="Concept 02: pixel logo on a grid" loading="lazy" decoding="async"></div><figcaption>02 Dualism<span>Roman for reason, italic for emotion — in one sentence. Textbook layout, pixel logo on the grid.</span></figcaption></figure>
+    <figure><div class="frame r1610"><img src="img/new-cup-v3-960.webp" width="1440" height="823" alt="Concept 03: mixed widths manifesto" loading="lazy" decoding="async"></div><figcaption>03 Manifesto<span>Condensed, extended and extended italic collide in one headline — a shouted manifesto.</span></figcaption></figure>
+    <figure><div class="frame r1610"><img src="img/new-cup-v4-960.webp" width="1440" height="900" alt="Concept 04: single monospace, maths symbols" loading="lazy" decoding="async"></div><figcaption>04 Ultra Clarity — chosen<span>One monospace for everything. Hierarchy by position and space only; maths symbols are the sole decoration.</span></figcaption></figure>
+  </div>
+  <div class="block"><h3 aria-hidden="true"></h3><dl>
+    <div><dt>// final</dt><dd>The logo is code: <code>{ Y A N D E X | C U P }</code>. Highlighter marks instead of buttons; facts linked by dotted connectors like a graph; text “decodes” into place like terminal output.</dd></div>
+    <div><dt>// logo constructor</dt><dd>Y · cup · C, each with variants — coordinate axes, a trophy, a Java mug, °C. A small puzzle for people who like puzzles.</dd></div>
+  </dl></div>
+  <div class="media cup2 white">
+    <div class="frame r169"><video data-src="videos/web/cup-2-716.mp4" poster="videos/cup-2-poster.webp" muted loop playsinline preload="none" aria-label="Yandex Cup logo constructor" style="object-fit:contain"></video></div>
+    <div class="frame r169"><video data-src="videos/web/cup-1-1280.mp4" data-src-m="videos/web/cup-1-720.mp4" poster="videos/cup-1-poster.webp" muted loop playsinline preload="none" aria-label="Yandex Cup website" style="object-fit:contain"></video></div>
+  </div>
+
+  <div class="block"><h3><span>04</span>Result</h3><dl>
+    <div><dt>// outcome</dt><dd>The system has run since 2024 — web, merch, offline — and another team kept extending it after I left. Applications roughly doubled, as part of a wider campaign.</dd></div>
+    <div><dt>// what worked</dt><dd>Developers read the language as their own.</dd></div>
+    <div><dt>// what i’d improve</dt><dd>Make the site fully code-native and more personal — adapting to each participant’s track and level.</dd></div>
+  </dl></div>
+</section>
+
+<!-- 02 YFD -->
+<section class="wrap case" id="yfd">
+  <h2 class="type">Yandex for Developers</h2>
+  <p class="meta">Art director · v1 2021, rebrand · brand system for 40+ events</p>
+  <p class="lede">A brand for Yandex’s developer community where code is not illustration but the typesetting rule. Its logo — a piece of code — survived a full rebrand.</p>
+
+  <div class="block"><h3><span>01</span>Brief</h3><dl>
+    <div><dt>// project</dt><dd>Yandex’s platform for the IT community: 40+ conferences, meetups and parties across eight stacks — backend, frontend, mobile, ML and more.</dd></div>
+    <div><dt>// objective</dt><dd>One brand flexible enough for any event, with a character for each stack.</dd></div>
+    <div><dt>// challenge</dt><dd>v1 was born during COVID for streams and social media. The rebrand had to scale to offline events and many teams — and keep the <code>*/</code> sign the community already liked.</dd></div>
+  </dl></div>
+
+  <div class="block"><h3><span>02</span>My part</h3><dl>
+    <div><dt>// role</dt><dd>Art director; author of the v1 idea and the rebrand concept.</dd></div>
+    <div><dt>// i made</dt><dd>v1: key idea, pitch, key visual, the <code>*/</code> logo and the typeset wordmark. Rebrand: the scalable system and the main key visual. Agency Shchuka developed and adapted it under my direction; Yandex developers built the graphics generator.</dd></div>
+    <div><dt>// key decision</dt><dd>Make the logo a piece of code: <code>*/</code>, the end of a comment — and a “Y”. The rebrand brief explicitly required keeping it.</dd></div>
+  </dl></div>
+  <div class="media" style="max-width:50%">
+    <figure><div class="frame r1610"><img src="img/new-yfd-v1-logo-960.webp" width="800" height="556" alt="v1 logo */ and wordmark Yandex for developers*//>" loading="lazy" decoding="async"></div><figcaption>v1 · 2021<span><code>*/</code> and a wordmark set like a line of code, with syntax highlighting.</span></figcaption></figure>
+    
+  </div>
+
+  <div class="block"><h3><span>03</span>Craft</h3><dl>
+    <div><dt>// design decision</dt><dd>Syntax as a typesetting rule. Every part of a title ends with a red semicolon: <code>ML Conf;</code> <code>Moscow;</code> <code>07.09;</code></dd></div>
+    <div><dt>// rules, not taste</dt><dd>Logo size = headline size ÷ 1.25. Margin = half the x-height, measured on flat glyphs. Leading 100%. Dash = stroke × 3. Four lines max. Anyone can build a correct layout without an art director.</dd></div>
+    <div><dt>// graphics by event type</dt><dd>Generative lines for conferences, abstract 3D for meetups, pixel stickers for informal events. Background colour = stack. Typeface: YS Geo.</dd></div>
+  </dl></div>
+  <div class="media">
+    <div class="frame r169"><iframe src="https://player.vimeo.com/video/870069354?h=91642a8795&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;dnt=1" title="Yandex for Developers logo animation" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
+    <div class="cols2">
+      <figure><div class="frame" style="aspect-ratio:1600/896"><img src="img/new-yfd-rules-960.webp" srcset="img/new-yfd-rules-960.webp 960w, img/new-yfd-rules-1600.webp 1600w" sizes="(max-width:900px) 100vw, 50vw" width="1600" height="896" alt="Event covers built by the rules" loading="lazy" decoding="async"></div><figcaption>Built by the rules<span>Red semicolons, red date, logo bottom-left; graphics by event type.</span></figcaption></figure>
+      <figure><div class="frame" style="aspect-ratio:1317/593"><img src="img/new-yfd-palette-960.webp" srcset="img/new-yfd-palette-960.webp 960w, img/new-yfd-palette-1600.webp 1317w" sizes="(max-width:900px) 100vw, 50vw" width="1317" height="593" alt="Colour = stackEight stacks, each with HEX, CMYK and Pantone." loading="lazy" decoding="async"></div><figcaption>Colour = stack<span>Eight stacks, each with HEX, CMYK and Pantone.</span></figcaption></figure>
+    </div>
+    <div class="cols3"><div class="frame r169"><iframe src="https://player.vimeo.com/video/862129417?h=42ab2fd2e8&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;dnt=1" title="Event covers generated by the system" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div><div class="frame r169"><iframe src="https://player.vimeo.com/video/870061329?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;dnt=1" title="Conferences, meetups and informal events" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div><div class="frame r169"><iframe src="https://player.vimeo.com/video/862118913?h=0de10078a4&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;dnt=1" title="Conference stage" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div></div>
+    <div class="cols3"><div class="frame r169"><iframe src="https://player.vimeo.com/video/862081255?h=c33522dcd3&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;dnt=1" title="Venue facade" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div><div class="frame r169"><iframe src="https://player.vimeo.com/video/862109483?h=6fd26ffd5d&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;dnt=1" title="ML Party stage" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div><div class="frame r169"><iframe src="https://player.vimeo.com/video/871804706?h=c56d51ec06&amp;background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;dnt=1" title="Outdoor poster" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div></div>
+  </div>
+
+  <div class="block"><h3><span>04</span>Result</h3><dl>
+    <div><dt>// outcome</dt><dd>One system across 40+ events in Moscow, Belgrade, Yerevan and online. The <code>*/</code> became a brand asset.</dd></div>
+    <div><dt>// what worked</dt><dd>Rules written as formulas let the brand scale without constant art direction.</dd></div>
+    <div><dt>// what i’d improve</dt><dd>Automate even more — the rules are already formulas. And after years in use, research how the audience reads the brand and strengthen what matters to them.</dd></div>
+  </dl></div>
+</section>
+
+<!-- 03 YATALKS -->
+<section class="wrap case" id="yatalks">
+  <h2 class="type">YaTalks 2021</h2>
+  <p class="meta">Concept author & art director · identity, logo, stage</p>
+  <p class="lede">Yandex’s flagship tech conference under the theme “IT is the new space”. I avoided every space cliché: no rockets, no stars.</p>
+
+  <div class="block"><h3><span>01</span>Brief</h3><dl>
+    <div><dt>// project</dt><dd>A three-day marathon with ~100 speakers and six tracks, online and offline; the main day ran on about nine stages.</dd></div>
+    <div><dt>// objective</dt><dd>From Yandex’s brief: reinforce its image as an IT leader, support hiring, get closer to Gen Z.</dd></div>
+    <div><dt>// challenge</dt><dd>One identity for six tracks, a hundred speakers, the broadcast and the physical venue.</dd></div>
+  </dl></div>
+
+  <div class="block"><h3><span>02</span>My part</h3><dl>
+    <div><dt>// role</dt><dd>Author of all initial concepts and the logo; art director of the system.</dd></div>
+    <div><dt>// i made</dt><dd>Three concepts and six logo options in two weeks; the final logo; stage sketches, often by hand; materials. I defended the concept to internal stakeholders. Agency Shchuka built the generative graphics, animation and resizes under my direction.</dd></div>
+    <div><dt>// key decision</dt><dd>Space as the interaction of objects — forms that attract, collide and merge, the way ideas do at a conference.</dd></div>
+  </dl></div>
+  <div class="media" style="max-width:50%">
+    <figure><div class="frame r169"><img src="img/new-yt-logos-960.webp" srcset="img/new-yt-logos-960.webp 960w, img/new-yt-logos-1600.webp 1440w" sizes="(max-width:900px) 100vw, 50vw" width="1440" height="810" alt="Six logo options" loading="lazy" decoding="async"></div><figcaption>Six logo options<span>The wide, sharp wordmark won.</span></figcaption></figure>
+  </div>
+
+  <div class="block"><h3><span>03</span>Craft</h3><dl>
+    <div><dt>// design decision</dt><dd>Living gradient forms + a strict modular grid (frames split 1/2 to 1/6) + a monospace “telemetry” voice. Each track got its own colour space.</dd></div>
+    <div><dt>// type</dt><dd>CoFo Sans and CoFo Sans Mono: a sturdy grotesque with moderately closed apertures — less soft than a humanist sans, less cold than a geometric one. Native Cyrillic, and a mono sibling in the same family.</dd></div>
+    <div><dt>// stage</dt><dd>Gradients printed on acrylic, fading to zero opacity — the digital blur dissolved into the real venue.</dd></div>
+  </dl></div>
+  <div class="media">
+    
+    <div class="cols3">
+      <div class="frame" style="aspect-ratio:16/9"><video data-src="videos/web/yatalks-1-800.mp4" poster="videos/yatalks-1-poster.webp" muted loop playsinline preload="none" aria-label="YaTalks social posts" style="object-fit:cover"></video></div>
+      <div class="frame" style="aspect-ratio:16/9"><video data-src="videos/web/yatalks-2-800.mp4" poster="videos/yatalks-2-poster.webp" muted loop playsinline preload="none" aria-label="YaTalks generative graphics" style="object-fit:cover"></video></div>
+      <div class="frame" style="aspect-ratio:16/9"><video data-src="videos/web/yatalks-3-800.mp4" poster="videos/yatalks-3-poster.webp" muted loop playsinline preload="none" aria-label="YaTalks key visual" style="object-fit:cover"></video></div>
+    </div>
+    <div class="cols4">
+      <figure><div class="frame" style="aspect-ratio:1/1"><img src="img/new-yt-stage-960.webp" srcset="img/new-yt-stage-960.webp 960w, img/new-yt-stage-1600.webp 1280w" sizes="(max-width:900px) 100vw, 50vw" width="1280" height="960" alt="Gradient acrylic panels on stage" loading="lazy" decoding="async"></div><figcaption>Stage panels<span>Print on acrylic, fading to transparent.</span></figcaption></figure>
+      <figure><div class="frame" style="aspect-ratio:1/1"><img src="img/new-yt-stage-logo-960.webp" width="960" height="1280" alt="Logo seen through frosted acrylic" loading="lazy" decoding="async"></div><figcaption>Blur, made physical</figcaption></figure>
+    </div>
+    <div class="marquee" style="--speed:70s"><div class="track">
+      <div class="item"><img src="img/yatalks-2f03bd154772891-636e77b41e9b3-2-960.webp" width="1920" height="1080" alt="Speaker badge and cup" loading="lazy" decoding="async"></div><div class="item"><img src="img/yatalks-5db8f2154772891-63483dad92b25-2-960.webp" width="1920" height="1280" alt="Studio filming" loading="lazy" decoding="async"></div><div class="item"><img src="img/yatalks-5ca114154772891-6374dc32abb19-2-960.webp" width="1920" height="1080" alt="Speaker card" loading="lazy" decoding="async"></div><div class="item"><img src="img/yatalks-c4caed154772891-6374df6a70c98-2-960.webp" width="1920" height="1093" alt="Broadcast studio and venue" loading="lazy" decoding="async"></div><div class="item"><img src="img/yatalks-e525d7154772891-637279d3e08ed-960.webp" width="1920" height="1080" alt="Talk on stage" loading="lazy" decoding="async"></div>
+      <div class="item dup" aria-hidden="true"><img src="img/yatalks-2f03bd154772891-636e77b41e9b3-2-960.webp" width="1920" height="1080" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/yatalks-5db8f2154772891-63483dad92b25-2-960.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/yatalks-5ca114154772891-6374dc32abb19-2-960.webp" width="1920" height="1080" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/yatalks-c4caed154772891-6374df6a70c98-2-960.webp" width="1920" height="1093" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/yatalks-e525d7154772891-637279d3e08ed-960.webp" width="1920" height="1080" alt="" loading="lazy" decoding="async"></div>
+    </div></div>
+  </div>
+
+  <div class="block"><h3><span>04</span>Result</h3><dl>
+    <div><dt>// outcome</dt><dd>The YATALKS wordmark outlived the 2021 identity and is still in use. I kept evolving YaTalks each year; the 2023 ASCII-art direction landed well.</dd></div>
+    <div><dt>// what worked</dt><dd>One system covered the site, broadcast, merch and stage.</dd></div>
+    <div><dt>// what i’d improve</dt><dd>A more functional site with simpler registration — it leaned too far into art. And less red, more white: white as space, for a calmer, more open place to talk.</dd></div>
+  </dl></div>
+</section>
+
+<!-- 04 MERCH -->
+<section class="wrap case" id="merch">
+  <h2 class="type">Yandex Welcome Pack</h2>
+  <p class="meta">Concept author · merch system, product design, production · 2024</p>
+  <p class="lede">Merch as a construction kit: every item clips onto every other. Shown here through one case — the pack every new Yandex employee receives.</p>
+
+  <div class="block"><h3><span>01</span>Brief</h3><dl>
+    <div><dt>// project</dt><dd>The welcome pack for every new Yandex employee. Print run: 10,500+.</dd></div>
+    <div><dt>// objective</dt><dd>Reflect the shared HR brand and leave room for each business unit to customise.</dd></div>
+    <div><dt>// challenge</dt><dd>Merch kept multiplying, it was hard to defend beyond taste — and people didn’t always wear it.</dd></div>
+  </dl></div>
+
+  <div class="block"><h3><span>02</span>My part</h3><dl>
+    <div><dt>// role</dt><dd>Author of the concept; led the welcome pack from idea to production.</dd></div>
+    <div><dt>// i made</dt><dd>I first defended the idea with a New Year backpack — “item zero”. For the welcome pack I found an independent maker of outdoor bags and briefed him on the carabiner idea; he built the prototype and transferred the rights. I placed the branding and made master files; a factory made the patterns; production ran in China.</dd></div>
+    <div><dt>// key decision</dt><dd>Stop making one-off merch. Every piece works alone and clips onto past and future collections.</dd></div>
+  </dl></div>
+  <div class="media cols2">
+    <figure><div class="frame" style="aspect-ratio:1335/494"><img src="img/new-wp-attach-960.webp" srcset="img/new-wp-attach-960.webp 960w, img/new-wp-attach-1600.webp 1335w" sizes="(max-width:900px) 100vw, 50vw" width="1335" height="494" alt="What to clip ontoLoops, D-rings, webbing." loading="lazy" decoding="async"></div><figcaption>What to clip onto<span>Loops, D-rings, webbing.</span></figcaption></figure>
+    <figure><div class="frame" style="aspect-ratio:1335/494"><img src="img/new-wp-hooks-960.webp" srcset="img/new-wp-hooks-960.webp 960w, img/new-wp-hooks-1600.webp 1335w" sizes="(max-width:900px) 100vw, 50vw" width="1335" height="494" alt="What to clip withCarabiners, buckles, paracord." loading="lazy" decoding="async"></div><figcaption>What to clip with<span>Carabiners, buckles, paracord.</span></figcaption></figure>
+  </div>
+
+  <div class="block"><h3><span>03</span>Craft</h3><dl>
+    <div><dt>// design decision</dt><dd>The shared code is the connection, not the logo: loops, carabiners, paracords. Bottles with carabiners, T-shirts with small loops for a pass or badge, even pens with loops. Like a charm bracelet — collect and recombine.</dd></div>
+    <div><dt>// technical</dt><dd>Materials chosen by task and budget (e.g. jacquards). Print areas and re-cuts agreed with each factory. Screen print with colour separations, direct print, debossing on fabric, 3D embroidery.</dd></div>
+  </dl></div>
+  <div class="media">
+    <div class="cols2">
+      <figure><div class="frame" style="aspect-ratio:1440/660"><img src="img/new-wp-pouch-960.webp" srcset="img/new-wp-pouch-960.webp 960w, img/new-wp-pouch-1600.webp 1440w" sizes="(max-width:900px) 100vw, 50vw" width="1440" height="660" alt="The small pouch detaches" loading="lazy" decoding="async"></div><figcaption>The small pouch detaches</figcaption></figure>
+      <figure><div class="frame r169"><img src="img/merch-240116-yandex-0333-2-960.webp" srcset="img/merch-240116-yandex-0333-2-960.webp 960w, img/merch-240116-yandex-0333-2-1600.webp 1600w" sizes="(max-width:900px) 100vw, 50vw" width="2000" height="1120" alt="The full welcome pack" loading="lazy" decoding="async"></div><figcaption>Bag + 7 items, ~₽4,800 per pack</figcaption></figure>
+    </div>
+    <div class="marquee" style="--speed:80s"><div class="track">
+      <div class="item"><img src="img/merch-240116-yandex-0399-960.webp" width="1920" height="2160" alt="Bag interior" loading="lazy" decoding="async"></div><div class="item"><img src="img/merch-240116-yandex-0099-960.webp" width="1922" height="2160" alt="Crossbody bag" loading="lazy" decoding="async"></div><div class="item"><img src="img/merch-240116-yandex-0191-1-960.webp" width="2000" height="1125" alt="Tote bag" loading="lazy" decoding="async"></div><div class="item"><img src="img/merch-240116-yandex-0143-960.webp" width="2000" height="2120" alt="Backpack" loading="lazy" decoding="async"></div><div class="item"><img src="img/merch-240116-yandex-0249-1-960.webp" width="2000" height="1125" alt="Pouches in three colours" loading="lazy" decoding="async"></div><div class="item"><img src="img/merch-241125-knyazev-yabackpack0019-2-960.webp" width="1920" height="1280" alt="Backpack system" loading="lazy" decoding="async"></div><div class="item"><img src="img/merch-241125-knyazev-yabackpack0356-960.webp" width="1920" height="1280" alt="Pouch on a paracord" loading="lazy" decoding="async"></div><div class="item"><img src="img/merch-240116-yandex-0490-1-960.webp" width="1920" height="1080" alt="Keyrings" loading="lazy" decoding="async"></div>
+      <div class="item dup" aria-hidden="true"><img src="img/merch-240116-yandex-0399-960.webp" width="1920" height="2160" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/merch-240116-yandex-0099-960.webp" width="1922" height="2160" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/merch-240116-yandex-0191-1-960.webp" width="2000" height="1125" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/merch-240116-yandex-0143-960.webp" width="2000" height="2120" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/merch-240116-yandex-0249-1-960.webp" width="2000" height="1125" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/merch-241125-knyazev-yabackpack0019-2-960.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/merch-241125-knyazev-yabackpack0356-960.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async"></div><div class="item dup" aria-hidden="true"><img src="img/merch-240116-yandex-0490-1-960.webp" width="1920" height="1080" alt="" loading="lazy" decoding="async"></div>
+    </div></div>
+  </div>
+
+  <div class="block"><h3><span>04</span>Result</h3><dl>
+    <div><dt>// outcome</dt><dd>A bag with a detachable pouch in three colours, plus seven items chosen from newcomers’ feedback. The constructor became the principle for the collections that followed.</dd></div>
+    <div><dt>// what worked</dt><dd>The mechanic — it still works.</dd></div>
+    <div><dt>// what i’d improve</dt><dd>A tested materials spec: fabrics, webbing and hardware checked together, so every new collection starts from a proven base.</dd></div>
+  </dl></div>
+</section>
+
+<!-- 05 DECKS -->
+<section class="wrap case" id="decks">
+  <h2 class="type">Mercuryo Decks</h2>
+  <p class="meta">Project lead · presentation system, AI agents · with designer Dima</p>
+  <p class="lede">Instead of teaching people a template, I put the brand where they already work: ready slide types and AI agents.</p>
+
+  <div class="block"><h3><span>01</span>Brief</h3><dl>
+    <div><dt>// project</dt><dd>A company-wide presentation system for Mercuryo.</dd></div>
+    <div><dt>// objective</dt><dd>On-brand decks people can make themselves, fast.</dd></div>
+    <div><dt>// challenge</dt><dd>Weekly all-hands and last-minute decks. Our presentation designer lost every Friday rebuilding slides, and people struggled with the PowerPoint template even after we simplified it.</dd></div>
+  </dl></div>
+
+  <div class="block"><h3><span>02</span>My part</h3><dl>
+    <div><dt>// i made</dt><dd>Rebuilt the template in Slide Master and tested it. Then moved everything into bento/slides, an open-source editor; digitised our slide types — sales, all-hands and more; set up the AI agents myself.</dd></div>
+    <div><dt>// key decision</dt><dd>Stop making people learn the template. Give them typed slides and an agent that fills them.</dd></div>
+  </dl></div>
+
+  <div class="block"><h3><span>03</span>Craft</h3><dl>
+    <div><dt>// design decision</dt><dd>Master slides grouped by meaning — covers, narrative, image layouts — a typology, not a pile of pictures.</dd></div>
+    <div><dt>// technical</dt><dd>Every deck carries a ready instruction for any agent — ChatGPT, Claude or Codex — to fill it with the user’s content on our masters.</dd></div>
+  </dl></div>
+  <div class="media cols2">
+    <div class="frame r169"><video data-src="videos/web/mercuryo-decks-960.mp4" poster="videos/mercuryo-decks-poster.webp" muted loop playsinline preload="none" aria-label="Mercuryo Decks in use" style="object-fit:cover"></video></div>
+    <div class="frame r169"><img src="img/pres-mercuryo-decks-slack-2-1600.webp" width="1920" height="1080" alt="Generating a deck with an agent" loading="lazy" decoding="async"></div>
+  </div>
+
+  <div class="block"><h3><span>04</span>Result</h3><dl>
+    <div><dt>// outcome</dt><dd>Used by half the company. All-hands decks now come together almost instantly: people bring the content, we run it through the tool. Next: hand it to Internal Comms.</dd></div>
+    <div><dt>// what i’d improve</dt><dd>Package it as a skill inside the LLM people already use, not a separate site. Keep adding templates and tuning on the slides the model handles worst.</dd></div>
+  </dl></div>
+</section>
+
+<!-- 06 TOKEN2049 -->
+<section class="wrap case" id="token">
+  <h2 class="type">Mercuryo at TOKEN2049</h2>
+  <p class="meta">Designer, end to end · Singapore 2026 · from idea to print-ready files</p>
+  <p class="lede">Team jerseys with a hidden logo: sport stripes up close, the Mercuryo wordmark from across the hall.</p>
+
+  <div class="block"><h3><span>01</span>Brief</h3><dl>
+    <div><dt>// project</dt><dd>Mercuryo at TOKEN2049 Singapore: two side events, team jerseys, table signs, a stand, keyrings, invitations, speaker slides.</dd></div>
+    <div><dt>// objective</dt><dd>Show Mercuryo as the seamless bridge between fiat and crypto.</dd></div>
+    <div><dt>// insight</dt><dd>“The best transition is the one you don’t notice.”</dd></div>
+  </dl></div>
+
+  <div class="block"><h3><span>02</span>My part</h3><dl>
+    <div><dt>// role</dt><dd>Everything by hand, from idea to print-ready files — the team was busy with product launches.</dd></div>
+    <div><dt>// key decision</dt><dd>Hide the logo in the jersey’s stripes, so the brand reads at a distance without shouting.</dd></div>
+  </dl></div>
+  <div class="media cols3">
+    <div class="frame r23"><img src="img/new-tk-far-960.webp" srcset="img/new-tk-far-960.webp 960w, img/new-tk-far-1600.webp 1600w" sizes="(max-width:900px) 100vw, 33vw" width="4672" height="7008" alt="Orange jerseys from behind: stripes form the logo" loading="lazy" decoding="async"></div>
+    <div class="frame r23"><img src="img/new-tk-booth-960.webp" srcset="img/new-tk-booth-960.webp 960w, img/new-tk-booth-1600.webp 1600w" sizes="(max-width:900px) 100vw, 33vw" width="4672" height="7008" alt="Team in blue jerseys at the venue" loading="lazy" decoding="async"></div>
+    <div class="frame r23"><img src="img/new-tk-sign-960.webp" srcset="img/new-tk-sign-960.webp 960w, img/new-tk-sign-1600.webp 1600w" sizes="(max-width:900px) 100vw, 33vw" width="4672" height="7008" alt="Table sign: Partner with us" loading="lazy" decoding="async"></div>
+  </div>
+
+  <div class="block"><h3><span>03</span>Craft</h3><dl>
+    <div><dt>// design decision</dt><dd>Gradient as meaning: one colour flowing into another is the on/off ramp itself.</dd></div>
+    <div><dt>// feedback round</dt><dd>Restored the reading order — Mercuryo, then the message, then Singapore. Lighter compositions; brightness only as an accent.</dd></div>
+    <div><dt>// the jersey</dt><dd>A light optical illusion. I tested it at full scale on paper, stepping back and forth until the stripes resolved into the logo. Thin print, no heavy film — Singapore heat outside, air-conditioning inside. Black tees: screen print, separated by layers.</dd></div>
+  </dl></div>
+  <div class="media">
+    <div class="cols2">
+      <div class="frame r169"><img src="img/new-tk-jersey-orange-960.webp" srcset="img/new-tk-jersey-orange-960.webp 960w, img/new-tk-jersey-orange-1600.webp 1440w" sizes="(max-width:900px) 100vw, 50vw" width="1440" height="810" alt="Orange jersey layout" loading="lazy" decoding="async"></div>
+      <div class="frame r169"><img src="img/new-tk-jersey-blue-960.webp" srcset="img/new-tk-jersey-blue-960.webp 960w, img/new-tk-jersey-blue-1600.webp 1440w" sizes="(max-width:900px) 100vw, 50vw" width="1440" height="810" alt="Blue jersey layout" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="cols3">
+      <div class="frame r23"><img src="img/new-tk-stand-960.webp" width="3899" height="5848" alt="Stacked product stand" loading="lazy" decoding="async"></div>
+      <div class="frame r23"><img src="img/new-tk-keys-960.webp" width="4672" height="7008" alt="Mercuryo keyrings" loading="lazy" decoding="async"></div>
+      <div class="frame r23"><img src="img/new-tk-team-960.webp" width="7008" height="4672" alt="Team in jerseys" loading="lazy" decoding="async" style="object-position:40% 50%"></div>
+    </div>
+    <div class="frame r32"><img src="img/new-tk-stage-960.webp" srcset="img/new-tk-stage-960.webp 960w, img/new-tk-stage-1600.webp 1600w" sizes="100vw" width="7008" height="4672" alt="Speaker slide on stage" loading="lazy" decoding="async"></div>
+  </div>
+
+  <div class="block"><h3><span>04</span>Result</h3><dl>
+    <div><dt>// outcome</dt><dd>The team was recognisable across the hall, and the jerseys were comfortable to wear all day.</dd></div>
+    <div><dt>// what i’d improve</dt><dd>Lock the list of deliverables earlier — the stand came and went. Merge the two side-event styles, bright and sporty, into one system. With more time, push the constructions and layouts further.</dd></div>
+  </dl></div>
+</section>
+
+<!-- 07 PUZZLE -->
+<section class="wrap case" id="puzzle">
+  <h2 class="type"><a href="puzzle-prototype/Page.dc.html">Puzzle page redesign ↗</a></h2>
+  <p class="meta">Personal project · UX & visual design · Jane Street “It’s a Metric, Too”</p>
+  <p class="lede">How can a puzzle be friendlier without making it easier? Rules first, two ways to read them, a playable grid with levels.</p>
+  <div class="media"><a href="puzzle-prototype/Page.dc.html" style="display:block"><div class="shot" style="border:1px solid var(--line)"><img src="img/puzzle-step-1072.webp" srcset="img/puzzle-step-1072.webp 1072w, img/puzzle-step-2144.webp 2144w" sizes="(max-width:1440px) 100vw, 1392px" width="2144" height="1374" alt="Puzzle page redesign: rules step by step" loading="lazy" decoding="async"></div></a></div>
+  <p class="meta"><a href="puzzle-prototype/Page.dc.html">Open the puzzle →</a></p>
+</section>
+
+<!-- 08 AGM -->
+<section class="wrap case" id="agm">
+  <h2 class="type">Bank AGM presentation</h2>
+  <p class="meta">Designer · data storytelling · PowerPoint, Figma, Adobe</p>
+  <p class="lede">The Annual General Meeting deck of one of Eastern Europe’s largest banks: a large volume of financial data turned into one clear story.</p>
+
+  <div class="block"><h3><span>01</span>Brief</h3><dl>
+    <div><dt>// challenge</dt><dd>Analyse and cross-check the numbers, build the narrative, and align every detail with the finance team and the CEO.</dd></div>
+  </dl></div>
+  <div class="block"><h3><span>02</span>My part</h3><dl>
+    <div><dt>// process</dt><dd>Briefs arrive as sketches on paper or a few lines of text. I clarify the purpose — what story the speaker should walk out with — build the narrative, request missing data, ask questions, and only then design.</dd></div>
+  </dl></div>
+  <div class="block"><h3><span>03</span>Craft</h3><dl>
+    <div><dt>// design decision</dt><dd>One key number per slide, with the trend beside it. One production workflow across PowerPoint, Figma and Adobe.</dd></div>
+  </dl></div>
+  <div class="stack">
+    <img src="img/pres-1-1-page-1-1600.webp" width="3200" height="753" alt="Slide: lending to the economy" loading="lazy" decoding="async">
+    <img src="img/pres-1-1-page-2-1600.webp" width="3200" height="753" alt="Slide: efficiency" loading="lazy" decoding="async">
+    <img src="img/pres-sb-17-065-ar2016-170516a-page-13-1600.webp" width="3200" height="753" alt="Slide: self-service network map" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<section class="wrap why" id="why">
+  <p><b>Why Jane Street.</b> Your <a href="https://www.janestreet.com/puzzles/" target="_blank" rel="noopener">puzzles page</a> ends with “One last thing — this is a puzzle!” I like that playfulness. For years I’ve designed for people who enjoy hard problems, and I’d love to do the same for your puzzles, games and events.</p>
+</section>
+<section class="wrap personal" id="personal">
+  <p><b>Outside work.</b> I paint in oils and experiment with technology. I’m into science fiction, contemporary art and neuroaesthetics — why the brain finds some things beautiful. I love complex problems, dry humour and smart people.</p>
+  <div class="photos"><div class="frame r34"><img src="img/personal-img-4962-960.webp" width="1290" height="1711" alt="" loading="lazy" decoding="async"></div><div class="frame r34"><img src="img/personal-img-4963-960.webp" width="1290" height="1727" alt="" loading="lazy" decoding="async"></div><div class="frame r34"><img src="img/personal-img-4964-960.webp" width="1290" height="1713" alt="" loading="lazy" decoding="async"></div><div class="frame r34"><img src="img/personal-img-4965-960.webp" width="1290" height="1707" alt="" loading="lazy" decoding="async"></div><div class="frame r34"><img src="img/personal-img-4966-960.webp" width="1290" height="1714" alt="" loading="lazy" decoding="async"></div><div class="frame r34"><img src="img/personal-img-4967-960.webp" width="1290" height="1704" alt="" loading="lazy" decoding="async"></div></div>
+</section>
+</main>
+
+<footer class="wrap contact" id="contact">
+  <div><h4>CONTACT</h4><a href="tel:+447983743535">+44 7983 743535</a><a href="mailto:aakatsur@gmail.com">aakatsur@gmail.com</a></div>
+  <div><h4>SOCIAL</h4><a href="https://www.behance.net/a2aa" target="_blank" rel="noopener">Behance</a><a href="https://www.linkedin.com/in/anna-katsur-a2084480/" target="_blank" rel="noopener">LinkedIn</a></div>
+  <p class="visa">Based in London · UK Global Talent visa</p>
+</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heads=[].slice.call(document.querySelectorAll('h2.type'));
+  heads.forEach(function(h){
+    var t=h.querySelector('a')||h, full=t.textContent;
+    h.setAttribute('aria-label',full);
+    if(reduce)return;
+    t.textContent=''; var c=document.createElement('span'); c.className='caret'; c.setAttribute('aria-hidden','true'); h.appendChild(c);
+    h._type=function(){var i=0;(function step(){t.textContent=full.slice(0,++i);if(i<full.length)setTimeout(step,45+Math.random()*40);else c.classList.add('done');})();};
+  });
+  var vids=[].slice.call(document.querySelectorAll('video'));
+  if('IntersectionObserver' in window){
+    var ho=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.target._type){e.target._type();e.target._type=null;ho.unobserve(e.target);}});},{threshold:.6});
+    heads.forEach(function(h){if(h._type)ho.observe(h);});
+    var small=window.matchMedia('(max-width:700px)').matches;
+    function src(v){if(!v.src){v.src=(small&&v.dataset.srcM)||v.dataset.src;}}
+    var vo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){src(v);var p=v.play();if(p&&p.catch)p.catch(function(){});}else if(v.src)v.pause();});},{rootMargin:'300px 0px'});
+    vids.forEach(function(v){vo.observe(v);});
+  } else {
+    heads.forEach(function(h){h._type&&h._type();});
+    vids.forEach(function(v){v.src=v.dataset.src;v.autoplay=true;v.play();});
+  }
+})();
+</script>
+</body>
+</html>

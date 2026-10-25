@@ -1,0 +1,695 @@
+<!doctype html>
+<meta charset="utf-8"><style data-dc-design-system-vars>@layer{:root{--c-surface:#ffffff;--c-surface-subtle:#fafafa;--c-surface-canvas:#e9e9e9;--c-surface-muted:#f5f5f5;--c-fg-1:#1f1f1f;--c-fg-2:#232323;--c-fg-3:#5c5c5c;--c-fg-4:#9e9e9e;--c-fg-5:#b8b8b8;--c-fg-icon:#242424;--c-fg-icon-muted:#6b696a;--c-border-strong:#e6e6e6;--c-border:#ebebeb;--c-border-subtle:#e9e9e9;--c-brand:#495bff;--c-brand-deep:#5835ff;--c-brand-soft-bg:#f5f3ff;--c-brand-stroke:#9747ff;--c-status-success-fg:#2a873a;--c-status-success-fg-alt:#3f934e;--c-status-success-bg:#e4f2e9;--c-status-fail-fg:#cb3333;--c-status-fail-fg-alt:#d04747;--c-status-fail-bg:#ecd1cd;--c-status-progress-fg:#495bff;--c-status-progress-bg:#f5f3ff;--c-status-waiting-fg:#232323;--c-status-waiting-bg:#f5f5f5;--c-status-refund-fg:#ffffff;--c-status-refund-bg:#495bff;--c-accent-boost:#d5821c;--shadow-card:0 12px 32px 0 rgba(0,0,0,0.06);--shadow-toast:0 12px 32px 0 rgba(0,0,0,0.20);--shadow-chrome:0 4px 20px 0 rgba(0,0,0,0.10);--shadow-divider-inset:inset 0 -0.5px 0 0 rgba(0,0,0,0.08);--r-pill:999px;--r-badge:12px;--r-input:10px;--r-toast:6px;--r-card:24px;--r-window:26px;--r-frame:124px;--s-1:2px;--s-2:4px;--s-3:6px;--s-4:8px;--s-5:10px;--s-6:12px;--s-7:16px;--s-8:20px;--s-9:24px;--s-10:28px;--s-11:32px;--c-accent-boost-grad:linear-gradient(180deg, #FFE02D 0%, #FECF05 100%);--r-none:0;--font-text:'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;}}</style>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>It's a Metric, Too — puzzle page concept</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/ugiro/tokens.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#3343d9}a:hover{color:#5835ff}
+html{scroll-behavior:smooth}
+summary{cursor:pointer}
+</style>
+</helmet>
+<div style="background: var(--c-surface-subtle); color: var(--c-fg-1); font-family: Roboto, var(--font-text); min-height: 100%;">
+
+<div style="max-width: 1120px; margin: 0 auto; box-sizing: border-box; padding: 48px 24px 72px; display: flex; flex-direction: column; gap: 64px;">
+
+<section id="learn" style="display: flex; flex-direction: column; gap: 20px; scroll-margin-top: 24px;">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<h2 style="margin: 0; font-size: 30px; font-weight: 900; letter-spacing: -0.02em;">Learn the rules</h2>
+<p style="margin: 0; font-size: 16px; color: var(--c-fg-3);">Read them in short, or go step by step. Your choice.</p>
+</div>
+<div role="tablist" aria-label="How to read the rules" style="display: inline-flex; gap: 4px; padding: 4px; border-radius: 14px; background: #ececec; align-self: flex-start;">
+<button type="button" role="tab" aria-selected="{{ quickSel }}" onClick="{{ setQuick }}" style="{{ quickTab }}">In short</button>
+<button type="button" role="tab" aria-selected="{{ detSel }}" onClick="{{ setDetailed }}" style="{{ detTab }}">Step by step</button>
+</div>
+
+<sc-if value="{{ quick }}" hint-placeholder-val="{{ true }}">
+<div style="background: var(--c-surface); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 36px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+<figure style="margin: 0; flex: none; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+<div style="display: flex; flex-direction: column;">
+<sc-for list="{{ quickRows }}" as="row" hint-placeholder-count="5">
+<div style="display: flex;">
+<sc-for list="{{ row.cells }}" as="c" hint-placeholder-count="5">
+<div style="{{ c.style }}">{{ c.text }}</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<figcaption style="font-size: 13px; color: var(--c-fg-3);">A solved example. ★ = capitol</figcaption>
+</figure>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px;">
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px;">
+<li style="display: flex; gap: 14px; align-items: flex-start;"><span style="flex: none; width: 30px; height: 30px; border-radius: 999px; background: #1f1f1f; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">1</span><span style="font-size: 18px; line-height: 1.45;">Split the grid into pieces. <strong>Every piece is symmetric.</strong></span></li>
+<li style="display: flex; gap: 14px; align-items: flex-start;"><span style="flex: none; width: 30px; height: 30px; border-radius: 999px; background: #1f1f1f; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">2</span><span style="font-size: 18px; line-height: 1.45;">Turn or flip a piece. The one cell that stays put is its <strong>capitol ★</strong>.</span></li>
+<li style="display: flex; gap: 14px; align-items: flex-start;"><span style="flex: none; width: 30px; height: 30px; border-radius: 999px; background: #1f1f1f; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 18px; line-height: 1.45;">Each number is the <strong>cheapest trip to a ★</strong>. A step costs the size of the piece you're in.</span></li>
+<li style="display: flex; gap: 14px; align-items: flex-start;"><span style="flex: none; width: 30px; height: 30px; border-radius: 999px; background: #1f1f1f; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">4</span><span style="font-size: 18px; line-height: 1.45;">Answer: write each piece's size in its cells, then add up <strong>(row total)²</strong>.</span></li>
+</ol>
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+<button type="button" onClick="{{ setDetailed }}" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #cfcfcf; background: #ffffff; color: #1f1f1f; font: 700 15px Roboto, sans-serif; cursor: pointer;">Not clear? Go step by step</button>
+<button type="button" onClick="{{ goWarmup }}" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: none; background: #1f1f1f; color: #ffffff; font: 700 15px Roboto, sans-serif; cursor: pointer;">Got it. Play the warm-up →</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ detailed }}" hint-placeholder-val="{{ false }}">
+<div style="background: var(--c-surface); border-radius: var(--r-card); box-shadow: var(--shadow-card); overflow: hidden;">
+<div role="tablist" aria-label="Rule steps" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--c-border);">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+<button type="button" role="tab" aria-selected="{{ t.selected }}" onClick="{{ t.go }}" style="{{ t.style }}"><span style="{{ t.numStyle }}">{{ t.n }}</span>{{ t.label }}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; padding: 32px;">
+<div style="flex: 1 1 420px; min-width: 0; background: var(--c-surface-subtle); border-radius: 16px; padding: 24px; min-height: 240px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">
+
+<div style="display: flex; flex-direction: column; gap: 18px; align-items: center;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px;">
+<sc-if value="{{ s0 }}" hint-placeholder-val="{{ true }}">
+<div style="width: 200px; box-sizing: border-box; border: 2px dashed #b8b8b8; border-radius: 14px; padding: 12px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; justify-content: center; background: var(--c-surface);">
+<sc-for list="{{ pieces }}" as="p" hint-placeholder-count="7">
+<div style="{{ p.wrap }}">
+<div style="{{ p.box }}">
+<sc-for list="{{ p.cells }}" as="c" hint-placeholder-count="4">
+<div style="{{ c.style }}"></div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<svg width="40" height="16" viewBox="0 0 40 16" aria-hidden="true"><path d="M2 8h32M28 2l6 6-6 6" fill="none" stroke="#1f1f1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</sc-if>
+<div style="display: flex; flex-direction: column;">
+<sc-for list="{{ exRows }}" as="row" hint-placeholder-count="5">
+<div style="display: flex; align-items: center;">
+<sc-for list="{{ row.cells }}" as="c" hint-placeholder-count="5">
+<div style="{{ c.style }}">{{ c.text }}</div>
+</sc-for>
+<span style="{{ row.sumStyle }}">{{ row.sum }}</span>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ s1 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 16px; align-items: flex-end;">
+<sc-for list="{{ capMinis }}" as="m" hint-placeholder-count="2">
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; width: 104px;">
+<div style="{{ m.box }}">
+<sc-for list="{{ m.cells }}" as="c" hint-placeholder-count="4">
+<div style="{{ c.style }}">{{ c.text }}</div>
+</sc-for>
+<sc-if value="{{ m.hasLine }}" hint-placeholder-val="{{ true }}">
+<div style="{{ m.line }}"></div>
+</sc-if>
+</div>
+<span style="{{ m.badge }}">{{ m.label }}</span>
+<figcaption style="font-size: 12px; line-height: 1.35; color: var(--c-fg-3); text-align: center;">{{ m.note }}</figcaption>
+</figure>
+</sc-for>
+</div>
+</sc-if>
+</div>
+<sc-if value="{{ s0 }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; justify-content: center;">
+<sc-for list="{{ step1 }}" as="m" hint-placeholder-count="4">
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+<div style="{{ m.box }}">
+<sc-for list="{{ m.cells }}" as="c" hint-placeholder-count="4">
+<div style="{{ c.style }}">{{ c.text }}</div>
+</sc-for>
+</div>
+<span style="{{ m.badge }}">{{ m.label }}</span>
+</figure>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ s1 }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 13px; color: var(--c-fg-3);"><span style="display: inline-block; width: 18px; border-top: 2px dashed #1f1f1f; vertical-align: middle; margin-right: 6px;"></span>mirror line <span style="display: inline-block; width: 12px; height: 12px; box-shadow: inset 0 0 0 3px #2f3ad1; vertical-align: middle; margin: 0 6px 0 14px;"></span>cell that stays put</p>
+</sc-if>
+<sc-if value="{{ s2 }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 16px; line-height: 1.45; text-align: center;">From the 6: pay <strong style="color: #2f3ad1;">3</strong> to cross into green, then <strong style="color: #2f3ad1;">3</strong> more to reach ★.<br><strong>3 + 3 = 6.</strong></p>
+</sc-if>
+<sc-if value="{{ s3 }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 16px; font-variant-numeric: tabular-nums; text-align: center;">37² + 29² + 31² + 43² + 55² = <strong style="font-size: 20px;">8,045</strong></p>
+</sc-if>
+</div>
+
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<span style="font-size: 13px; font-weight: 500; color: var(--c-fg-3);">Step {{ stepNo }} of 4</span>
+<h3 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 900; letter-spacing: -0.01em;">{{ stepTitle }}</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--c-fg-2);">{{ stepText }}</p>
+<details style="border: 1px solid var(--c-border); border-radius: 12px; padding: 12px 14px; background: var(--c-surface);">
+<summary style="font-size: 14px; font-weight: 700;">Exact rule</summary>
+<p style="margin: 10px 0 0; font-size: 14px; line-height: 1.55; color: var(--c-fg-3);">{{ stepPrecise }}</p>
+</details>
+<div style="display: flex; gap: 10px; margin-top: auto; padding-top: 8px; flex-wrap: wrap;">
+<button type="button" onClick="{{ prev }}" disabled="{{ prevOff }}" style="{{ prevStyle }}">← Back</button>
+<button type="button" onClick="{{ next }}" style="min-height: 44px; padding: 0 20px; border-radius: 10px; border: none; background: #1f1f1f; color: #ffffff; font: 700 15px Roboto, sans-serif; cursor: pointer;">{{ nextLabel }}</button>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</section>
+
+<section id="puzzle" style="display: flex; flex-direction: column; gap: 20px; scroll-margin-top: 24px;">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<h2 style="margin: 0; font-size: 30px; font-weight: 900; letter-spacing: -0.02em;">Play it</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--c-fg-3); max-width: 720px;">Start small. Pick a colour and paint the cells. Touching cells of one colour make a state. The page draws the capitols and tells you what's wrong.</p>
+</div>
+<div role="tablist" aria-label="Levels" style="display: flex; gap: 8px; flex-wrap: wrap;">
+<sc-for list="{{ levelTabs }}" as="t" hint-placeholder-count="3">
+<button type="button" role="tab" aria-selected="{{ t.selected }}" onClick="{{ t.go }}" style="{{ t.style }}"><span style="font-weight: 900;">{{ t.size }}</span><span style="{{ t.subStyle }}">{{ t.label }}</span></button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+
+<div style="flex: 999 1 520px; min-width: 0; background: var(--c-surface); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 900;">{{ lvTitle }}</h3>
+<p style="margin: 0; font-size: 15px; color: var(--c-fg-3);">{{ lvIntro }}</p>
+</div>
+<div style="overflow-x: auto; padding: 4px;">
+<div onPointerUp="{{ stopDrag }}" onPointerLeave="{{ stopDrag }}" style="{{ gridStyle }}">
+<sc-for list="{{ gameCells }}" as="c" hint-placeholder-count="9">
+<button type="button" aria-label="{{ c.label }}" onPointerDown="{{ c.down }}" onPointerEnter="{{ c.enter }}" style="{{ c.style }}">{{ c.text }}<span aria-hidden="true" style="{{ c.starStyle }}">★</span><span style="{{ c.subStyle }}">{{ c.sub }}</span></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; color: var(--c-fg-3);">
+<span><strong style="color: #1f1f1f;">★</strong> capitol, drawn for you</span>
+<span><span style="display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 6px; border: 1px solid #1f1f1f; background-color: #ffffff; background-image: repeating-linear-gradient(-45deg, rgba(198,40,40,0.55) 0 2px, transparent 2px 6px);"></span>not symmetric</span>
+<span><span style="display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 6px; box-shadow: inset 0 0 0 3px #c62828;"></span>number doesn't match</span>
+<span><span style="display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 6px; box-shadow: inset 0 0 0 3px #2f3ad1;"></span>traced trip</span>
+</div>
+</div>
+
+<aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<div style="background: var(--c-surface); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 22px; display: flex; flex-direction: column; gap: 14px;">
+<span style="font-size: 13px; font-weight: 700; color: var(--c-fg-3);">Paint</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{ swatches }}" as="s" hint-placeholder-count="8">
+<button type="button" aria-label="{{ s.label }}" aria-pressed="{{ s.pressed }}" onClick="{{ s.pick }}" style="{{ s.style }}"></button>
+</sc-for>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+<button type="button" aria-pressed="{{ eraseOn }}" onClick="{{ pickErase }}" style="{{ eraseStyle }}">Eraser</button>
+<button type="button" aria-pressed="{{ traceOn }}" onClick="{{ pickTrace }}" style="{{ traceStyle }}">Trace a trip</button>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.45; color: var(--c-fg-3);">Click or drag to paint. One colour can be reused for pieces that don't touch. With “Trace a trip”, click any cell to see its cheapest way to a ★.</p>
+</div>
+
+<div style="background: var(--c-surface); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 22px; display: flex; flex-direction: column; gap: 12px;">
+<span style="font-size: 13px; font-weight: 700; color: var(--c-fg-3);">How it's going</span>
+<sc-for list="{{ messages }}" as="m" hint-placeholder-count="2">
+<p role="status" style="{{ m.style }}">{{ m.text }}</p>
+</sc-for>
+<sc-if value="{{ hasTrace }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 10px 12px; border-radius: 10px; background: #eceeff; color: #1f2a9e; font-size: 14px; line-height: 1.45;">{{ traceText }}</p>
+</sc-if>
+<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+<button type="button" onClick="{{ check }}" style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: none; background: #1f1f1f; color: #ffffff; font: 700 15px Roboto, sans-serif; cursor: pointer;">Check</button>
+<button type="button" onClick="{{ clear }}" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #cfcfcf; background: #ffffff; color: #1f1f1f; font: 700 15px Roboto, sans-serif; cursor: pointer;">Clear</button>
+<sc-if value="{{ canSolve }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ solve }}" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #cfcfcf; background: #ffffff; color: #1f1f1f; font: 700 15px Roboto, sans-serif; cursor: pointer;">Show the answer</button>
+</sc-if>
+</div>
+<sc-if value="{{ showNext }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ nextLevel }}" style="min-height: 48px; padding: 0 18px; border-radius: 12px; border: none; background: #1f7a35; color: #ffffff; font: 700 15px Roboto, sans-serif; cursor: pointer;">{{ nextLevelLabel }}</button>
+</sc-if>
+</div>
+
+<details style="background: var(--c-surface); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 18px 22px;">
+<summary style="font-size: 15px; font-weight: 700;">Rules at a glance</summary>
+<ol style="margin: 12px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.45; color: var(--c-fg-2);">
+<li>Cover the grid with <strong>symmetric states</strong>. No overlaps.</li>
+<li>A <strong>capitol ★</strong> is the one cell that never moves. Some states have none.</li>
+<li>A step costs the <strong>state's size</strong>. At a border, pay for the smaller state.</li>
+<li>A number is the <strong>cheapest trip</strong> to a capitol.</li>
+<li>Write state sizes in the cells. Answer = sum of each <strong>(row total)²</strong>.</li>
+</ol>
+</details>
+</aside>
+</div>
+</section>
+
+<section id="submit" style="display: flex; flex-direction: column; gap: 20px;">
+<h2 style="margin: 0; font-size: 30px; font-weight: 900; letter-spacing: -0.02em;">Submit your answer</h2>
+<form style="background: var(--c-surface); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px;">
+<div style="grid-column: 1 / -1; display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; background: #fff4e0; color: #6b3d06; font-size: 15px; line-height: 1.45;">
+<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 1px;"><circle cx="10" cy="10" r="8.5" fill="none" stroke="#6b3d06" stroke-width="1.6"></circle><path d="M10 5.5v5.5M10 13.6v.4" stroke="#6b3d06" stroke-width="1.8" stroke-linecap="round"></path></svg>
+<span><strong>Only your first answer counts.</strong> Check your number before you send it.</span>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700;">Answer
+<input type="text" inputmode="numeric" placeholder="e.g. 8045" style="min-height: 48px; padding: 0 14px; border-radius: var(--r-input); border: 1px solid #cfcfcf; font: 500 17px Roboto, sans-serif;">
+<span style="font-weight: 400; font-size: 13px; color: var(--c-fg-3);">One whole number, digits only.</span>
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700;">Email
+<input type="email" placeholder="you@example.com" style="min-height: 48px; padding: 0 14px; border-radius: var(--r-input); border: 1px solid #cfcfcf; font: 400 16px Roboto, sans-serif;">
+<span style="font-weight: 400; font-size: 13px; color: var(--c-fg-3);">We'll email you the result.</span>
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700;">Name on the solver list (optional)
+<input type="text" placeholder="Your name or username" style="min-height: 48px; padding: 0 14px; border-radius: var(--r-input); border: 1px solid #cfcfcf; font: 400 16px Roboto, sans-serif;">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700;">Questions or comments (optional)
+<input type="text" placeholder="Anything for the puzzle team?" style="min-height: 48px; padding: 0 14px; border-radius: var(--r-input); border: 1px solid #cfcfcf; font: 400 16px Roboto, sans-serif;">
+</label>
+<label style="grid-column: 1 / -1; display: flex; gap: 10px; align-items: center; font-size: 15px;">
+<input type="checkbox" style="width: 20px; height: 20px;">If I'm right, add my name to the solver list
+</label>
+<div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+<button type="button" disabled="{{ yes }}" style="min-height: 48px; padding: 0 24px; border-radius: 12px; border: none; background: #1f1f1f; color: #ffffff; font: 700 15px Roboto, sans-serif; opacity: 0.55;">Submit answer</button>
+<span style="font-size: 13px; color: var(--c-fg-3);">This is a mockup. The form doesn't send anything.</span>
+</div>
+</form>
+</section>
+
+<section id="next" style="display: flex; flex-direction: column; gap: 20px;">
+<h2 style="margin: 0; font-size: 30px; font-weight: 900; letter-spacing: -0.02em;">What happens next</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px;">
+<li style="background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 700; color: #3343d9;">Now</span><span style="font-size: 16px; font-weight: 700;">You get an email</span><span style="font-size: 14px; line-height: 1.45; color: var(--c-fg-3);">It says your answer has arrived.</span></li>
+<li style="background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 700; color: #3343d9;">End of the month</span><span style="font-size: 16px; font-weight: 700;">Solution and solver list</span><span style="font-size: 14px; line-height: 1.45; color: var(--c-fg-3);">See the full solution and who solved it.</span></li>
+<li style="background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 700; color: #3343d9;">Next month</span><span style="font-size: 16px; font-weight: 700;">A new puzzle</span><span style="font-size: 14px; line-height: 1.45; color: var(--c-fg-3);">Browse the archive while you wait.</span></li>
+</ol>
+</section>
+
+<footer style="border-top: 1px solid var(--c-border); padding-top: 20px; font-size: 13px; line-height: 1.5; color: var(--c-fg-3);">An unofficial redesign by Anna Katsur. The rules are the same. The layout, words and pictures are new.</footer>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      step: 0, mode: 'quick', level: 1, color: 0, tool: 'paint', drag: false,
+      paint: { 1: new Array(9).fill(null), 2: new Array(25).fill(null), 3: new Array(121).fill(null) },
+      checked: { 1: false, 2: false, 3: false },
+      trace: { 1: null, 2: null, 3: null }
+    };
+  }
+
+  scrollTo(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  paintCell(idx) {
+    var lv = this.state.level;
+    var val = this.state.tool === 'erase' ? null : this.state.color;
+    var arr = this.state.paint[lv];
+    if (arr[idx] === val) return;
+    var next = arr.slice(); next[idx] = val;
+    var p = Object.assign({}, this.state.paint); p[lv] = next;
+    var ch = Object.assign({}, this.state.checked); ch[lv] = false;
+    this.setState({ paint: p, checked: ch });
+  }
+
+  setLevelField(field, value) {
+    var o = Object.assign({}, this.state[field]); o[this.state.level] = value;
+    var patch = {}; patch[field] = o;
+    this.setState(patch);
+  }
+
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var INK = '#1f1f1f';
+    var PAL = ['#c9ccff', '#ffe08a', '#9fe0b5', '#ffb4a8', '#a8dcff', '#e6c3ff', '#ffd1a1', '#d4d4d4', '#8fe3d6', '#ffb8dc', '#d8f28a', '#e9d8b4', '#b9c7d9', '#9fb4ff', '#ffb366', '#c79bf2'];
+    var FILL = {
+      P: 'background: #c9ccff;',
+      B: 'background-color: #ffe08a; background-image: repeating-linear-gradient(45deg, rgba(31,31,31,0.12) 0 2px, transparent 2px 8px);',
+      G: 'background: #9fe0b5;',
+      R: 'background: #ffb4a8;',
+      W: 'background: #ffffff;'
+    };
+    var OK = 'display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 12px; background: #dff3e5; color: #1f6b2d; font-size: 13px; font-weight: 700;';
+    var NO = 'display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 12px; background: #fde2df; color: #8f2020; font-size: 13px; font-weight: 700;';
+    var BTN2 = 'min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #cfcfcf; background: #ffffff; color: #1f1f1f; font: 700 15px Roboto, sans-serif; cursor: pointer;';
+    var BTN2OFF = BTN2 + ' opacity: 0.4; cursor: default;';
+
+    // ---------- small illustrations ----------
+    function mini(rows, cols, filled, opts) {
+      var cs = 26, on = {}, fixed = {}, cells = [];
+      filled.forEach(function (p) { on[p[0] + ',' + p[1]] = true; });
+      (opts.fixed || []).forEach(function (p) { fixed[p[0] + ',' + p[1]] = true; });
+      for (var r = 0; r < rows; r++) for (var c = 0; c < cols; c++) {
+        var k = r + ',' + c;
+        var s = 'width: ' + cs + 'px; height: ' + cs + 'px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 15px; line-height: 1;';
+        if (on[k]) { s += ' border: 1px solid ' + INK + '; background: #c9ccff;'; if (fixed[k]) s += ' box-shadow: inset 0 0 0 3px #2f3ad1;'; }
+        cells.push({ style: s, text: (opts.star && opts.star[0] === r && opts.star[1] === c) ? '★' : '' });
+      }
+      return { box: 'position: relative; display: grid; grid-template-columns: repeat(' + cols + ', ' + cs + 'px); grid-template-rows: repeat(' + rows + ', ' + cs + 'px);', cells: cells, hasLine: !!opts.line, line: opts.line || '', badge: opts.ok ? OK : NO, label: opts.label, note: opts.note || '' };
+    }
+    var LINE = 'position: absolute; pointer-events: none;';
+    var step1 = [
+      mini(2, 2, [[0,0],[0,1],[1,0],[1,1]], { ok: true, label: '✓ Square' }),
+      mini(2, 2, [[0,1],[1,0],[1,1]], { ok: true, label: '✓ Corner' }),
+      mini(3, 3, [[0,1],[1,0],[1,1],[1,2],[2,1]], { ok: true, label: '✓ Plus' }),
+      mini(3, 2, [[0,0],[1,0],[2,0],[2,1]], { ok: false, label: '✗ No symmetry' })
+    ];
+    var step2 = [
+      mini(1, 1, [[0,0]], { ok: true, label: '✓ Capitol', star: [0,0], fixed: [[0,0]], note: 'One cell is its own capitol' }),
+      mini(2, 2, [[0,1],[1,0],[1,1]], { ok: true, label: '✓ Capitol', star: [1,1], fixed: [[1,1]], note: 'Flip along the line. Only ★ stays put.', line: LINE + ' left: -11px; top: 26px; width: 74px; border-top: 2px dashed #1f1f1f; transform: rotate(45deg);' }),
+      mini(1, 3, [[0,0],[0,1],[0,2]], { ok: false, label: '✗ None', fixed: [[0,0],[0,1],[0,2]], note: '3 cells stay put. No capitol.', line: LINE + ' left: -8px; top: 12px; width: 94px; border-top: 2px dashed #1f1f1f;' }),
+      mini(3, 3, [[0,1],[1,0],[1,1],[1,2],[2,1]], { ok: false, label: '✗ None', fixed: [[0,1],[1,1],[2,1]], note: 'The middle line stays put. No capitol.', line: LINE + ' left: 38px; top: -8px; height: 94px; border-left: 2px dashed #1f1f1f;' })
+    ];
+
+    var MAP = ['PBBRR', 'PBBGR', 'PPGGR', 'RPPPR', 'RRRRR'];
+    var SIZE = { P: 7, B: 4, G: 3, R: 11 };
+    var CLUE5 = { '0,0': 12, '0,4': 17, '1,0': 8, '1,2': 6, '1,3': 3, '3,1': 7, '3,2': 6, '3,4': 10, '4,0': 25, '4,4': 0 };
+    var CAP5 = { '2,1': 1, '2,3': 1, '4,4': 1 };
+
+    function heroFrame(cs) {
+      var rows = [];
+      for (var r = 0; r < 5; r++) {
+        var cells = [];
+        for (var c = 0; c < 5; c++) {
+          var s = MAP[r][c], k = r + ',' + c, thick = '2px solid ' + INK, thin = '1px solid rgba(31,31,31,0.2)';
+          var br = c === 4 ? thick : (MAP[r][c + 1] !== s ? thick : thin);
+          var bb = r === 4 ? thick : (MAP[r + 1][c] !== s ? thick : thin);
+          cells.push({ text: CAP5[k] ? '★' : '', style: 'width: ' + cs + 'px; height: ' + cs + 'px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 16px; color: ' + INK + '; border-top: ' + (r === 0 ? thick : 'none') + '; border-left: ' + (c === 0 ? thick : 'none') + '; border-right: ' + br + '; border-bottom: ' + bb + ';' + FILL[s] });
+        }
+        rows.push({ cells: cells });
+      }
+      return rows;
+    }
+
+    function piece(rows, cols, filled, fill, next) {
+      var cs = 14, on = {}, cells = [];
+      filled.forEach(function (p) { on[p[0] + ',' + p[1]] = true; });
+      for (var r = 0; r < rows; r++) for (var c = 0; c < cols; c++) cells.push({ style: on[r + ',' + c] ? 'width: ' + cs + 'px; height: ' + cs + 'px; box-sizing: border-box; border: 1px solid ' + INK + '; ' + fill : 'width: ' + cs + 'px; height: ' + cs + 'px;' });
+      return { wrap: 'padding: 4px; border-radius: 8px;' + (next ? ' box-shadow: 0 0 0 2px #2f3ad1;' : ''), box: 'display: grid; grid-template-columns: repeat(' + cols + ', ' + cs + 'px); grid-template-rows: repeat(' + rows + ', ' + cs + 'px);', cells: cells };
+    }
+    var PLAIN = 'background: #ffffff;';
+    var pieces = [
+      piece(4, 4, [[0,0],[1,0],[2,0],[2,1],[3,1],[3,2],[3,3]], FILL.P, false),
+      piece(2, 2, [[0,0],[0,1],[1,0],[1,1]], FILL.B, false),
+      piece(2, 2, [[0,1],[1,0],[1,1]], FILL.G, false),
+      piece(5, 5, [[0,3],[0,4],[1,4],[2,4],[3,4],[3,0],[4,0],[4,1],[4,2],[4,3],[4,4]], FILL.R, true),
+      piece(1, 1, [[0,0]], PLAIN, false),
+      piece(1, 3, [[0,0],[0,1],[0,2]], PLAIN, false),
+      piece(3, 3, [[0,1],[1,0],[1,1],[1,2],[2,1]], PLAIN, false)
+    ];
+    var board = [];
+    for (var a = 0; a < 5; a++) {
+      var bcells = [];
+      for (var b = 0; b < 5; b++) {
+        var bs = MAP[a][b], placed = bs !== 'R', TH = '2px solid ' + INK;
+        var right = MAP[a][b + 1], down = a < 4 ? MAP[a + 1][b] : null;
+        var thinB = placed ? '1px solid rgba(31,31,31,0.2)' : '1px dashed rgba(31,31,31,0.35)';
+        var bR = b === 4 ? TH : ((placed || right !== 'R') && right !== bs ? TH : thinB);
+        var bB = a === 4 ? TH : ((placed || down !== 'R') && down !== bs ? TH : thinB);
+        bcells.push({ style: 'width: 40px; height: 40px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; font-size: 15px; font-weight: 700; color: ' + INK + '; border-top: ' + (a === 0 ? TH : 'none') + '; border-left: ' + (b === 0 ? TH : 'none') + '; border-right: ' + bR + '; border-bottom: ' + bB + ';' + (placed ? FILL[bs] : PLAIN), text: CLUE5[a + ',' + b] !== undefined ? String(CLUE5[a + ',' + b]) : '' });
+      }
+      board.push({ cells: bcells, sum: '', sumStyle: 'display: none;' });
+    }
+
+    var CAPS = { '2,1': 1, '2,3': 1, '4,4': 1 }, PATH = { '3,2': 1, '2,2': 1, '2,3': 1 };
+    function exFrame(mode) {
+      var cs = 40, rows = [];
+      for (var r = 0; r < 5; r++) {
+        var cells = [], sum = 0;
+        for (var c = 0; c < 5; c++) {
+          var s = MAP[r][c], k = r + ',' + c, thick = '2px solid ' + INK, thin = '1px solid rgba(31,31,31,0.2)';
+          sum += SIZE[s];
+          var br = c === 4 ? thick : (MAP[r][c + 1] !== s ? thick : thin);
+          var bb = r === 4 ? thick : (MAP[r + 1][c] !== s ? thick : thin);
+          var sty = 'width: ' + cs + 'px; height: ' + cs + 'px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; line-height: 1; color: ' + INK + '; border-top: ' + (r === 0 ? thick : 'none') + '; border-left: ' + (c === 0 ? thick : 'none') + '; border-right: ' + br + '; border-bottom: ' + bb + ';' + FILL[s];
+          var text = '';
+          if (mode === 'caps') {
+            if (CAPS[k]) { text = '★'; sty += ' font-size: 20px; box-shadow: inset 0 0 0 3px #2f3ad1;'; }
+            else if (CLUE5[k] !== undefined) { text = String(CLUE5[k]); sty += ' font-size: 15px; font-weight: 700;'; }
+          } else if (mode === 'trip') {
+            if (CAPS[k]) { text = '★'; sty += ' font-size: 20px;'; }
+            else if (k === '3,2') { text = '6'; sty += ' font-size: 17px; font-weight: 900;'; }
+            else if (k === '2,2') { text = '+3'; sty += ' font-size: 13px; font-weight: 700; color: #2f3ad1;'; }
+            else if (CLUE5[k] !== undefined) { text = String(CLUE5[k]); sty += ' font-size: 14px; font-weight: 500; color: #5c5c5c;'; }
+            if (PATH[k]) sty += ' box-shadow: inset 0 0 0 3px #2f3ad1;';
+          } else { text = String(SIZE[s]); sty += ' font-size: 15px; font-weight: 700;'; }
+          cells.push({ style: sty, text: text });
+        }
+        rows.push({ cells: cells, sum: mode === 'sizes' ? '= ' + sum : '', sumStyle: mode === 'sizes' ? 'margin-left: 10px; min-width: 40px; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;' : 'display: none;' });
+      }
+      return rows;
+    }
+    var sumRows = MAP.map(function (row) {
+      var vals = row.split('').map(function (s) { return SIZE[s]; });
+      var sum = vals.reduce(function (x, y) { return x + y; }, 0);
+      return { cells: vals.join(' + '), sum: sum, sq: sum + '² = ' + (sum * sum).toLocaleString('en-GB') };
+    });
+
+    // ---------- rule steps ----------
+    var step = st.step;
+    var STEPS = [
+      { label: 'The idea', title: 'Cover the grid with symmetric pieces', text: 'Each piece is a state: a group of touching cells. Turn it or flip it, and it looks the same. Cover every cell, with no overlaps.', precise: 'The grid is divided into states. A state is a connected group of one or more squares that is symmetric in some way, by rotation or by reflection. States do not overlap and together cover the whole grid.' },
+      { label: 'Capitols', title: 'Find the capitol ★', text: 'Turn and flip the state every way it fits. If one cell never moves, that’s the capitol. Some states have none.', precise: 'If every non-trivial rotation or reflection that maps a state to itself leaves exactly one of its squares fixed, that square is the capitol. A 1 × 3 strip and the X pentomino have no capitol.' },
+      { label: 'Trips', title: 'Each number is a trip', text: 'Every step costs the size of the state you’re in. Crossing a border? Pay for the smaller state. The number is the cheapest trip to any capitol.', precise: 'Moving to an orthogonally adjacent square costs the size of the state you travel in; between two states, the smaller of the two sizes. A number shows the lowest cost from that square to any capitol.' },
+      { label: 'Answer', title: 'Submit one number', text: 'Write each state’s size in all its cells. Add up each row. Square each total and add the squares together.', precise: 'Label each cell with the size of its state. Compute the sum of each row, and submit the sum of the squares of these row sums.' }
+    ];
+    var tabs = STEPS.map(function (s, i) {
+      var on = i === step, done = i < step;
+      return {
+        n: done ? '✓' : String(i + 1), label: s.label, selected: on ? 'true' : 'false',
+        go: function () { self.setState({ step: i }); },
+        style: 'flex: 1 1 140px; min-height: 56px; display: flex; align-items: center; justify-content: center; gap: 10px; border: none; border-bottom: 3px solid ' + (on ? '#1f1f1f' : 'transparent') + '; background: ' + (on ? '#ffffff' : '#fafafa') + '; color: ' + (on ? '#1f1f1f' : '#5c5c5c') + '; font: 700 15px Roboto, sans-serif; cursor: pointer;',
+        numStyle: 'width: 24px; height: 24px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: ' + (on ? '#1f1f1f' : (done ? '#dff3e5' : '#ebebeb')) + '; color: ' + (on ? '#ffffff' : (done ? '#1f6b2d' : '#5c5c5c')) + ';'
+      };
+    });
+
+    // ---------- the game ----------
+    var CLUES11 = [
+      [null, 8, 4, null, null, 11, null, null, null, 5, null],
+      [null, null, null, null, null, null, null, 11, null, null, null],
+      [null, null, 7, null, null, 1, null, null, null, null, 14],
+      [28, null, null, 51, null, null, 1, null, 6, null, null],
+      [null, 22, null, null, null, null, null, null, 4, null, 1],
+      [null, null, null, 15, null, 10, null, 0, null, null, null],
+      [11, null, 11, null, null, null, null, null, null, 9, null],
+      [null, null, 17, null, 14, null, null, 10, null, null, 13],
+      [30, null, null, null, null, 6, null, null, 45, null, null],
+      [null, null, null, 10, null, null, null, null, null, null, null],
+      [null, 26, null, null, null, 0, null, null, 77, 61, null]
+    ];
+    var clue11 = {};
+    CLUES11.forEach(function (row, r) { row.forEach(function (v, c) { if (v !== null) clue11[r * 11 + c] = v; }); });
+    var clue5 = {};
+    Object.keys(CLUE5).forEach(function (k) { var p = k.split(','); clue5[(+p[0]) * 5 + (+p[1])] = CLUE5[k]; });
+    var LEVELS = {
+      1: { n: 3, cs: 64, fs: 22, size: '3 × 3', label: 'Warm-up', title: 'Warm-up: 3 × 3', intro: 'Three small states. Find where the capitols are.', clues: { 2: 0, 3: 0, 4: 3, 7: 6, 8: 6 }, sol: ['ABB', 'AAB', 'CCC'], key: { A: 0, B: 1, C: 2 } },
+      2: { n: 5, cs: 56, fs: 19, size: '5 × 5', label: 'The example', title: 'The example: 5 × 5', intro: 'The example from the rules. Four states.', clues: clue5, sol: MAP, key: { P: 0, B: 1, G: 2, R: 3 } },
+      3: { n: 11, cs: 42, fs: 15, size: '11 × 11', label: 'The real puzzle', title: 'The real puzzle: 11 × 11', intro: 'This is the one to submit. Take your time.', clues: clue11, sol: null, key: null }
+    };
+    var lvNo = st.level, LV = LEVELS[lvNo], n = LV.n, N = n * n;
+    var arr = st.paint[lvNo];
+
+    function nb(i) {
+      var r = Math.floor(i / n), c = i % n, out = [];
+      if (r > 0) out.push(i - n); if (r < n - 1) out.push(i + n);
+      if (c > 0) out.push(i - 1); if (c < n - 1) out.push(i + 1);
+      return out;
+    }
+    var comp = new Array(N).fill(-1), comps = [];
+    for (var i0 = 0; i0 < N; i0++) {
+      if (arr[i0] === null || comp[i0] !== -1) continue;
+      var id = comps.length, q = [i0], cells = [];
+      comp[i0] = id;
+      while (q.length) {
+        var u = q.shift(); cells.push(u);
+        nb(u).forEach(function (v) { if (comp[v] === -1 && arr[v] === arr[i0]) { comp[v] = id; q.push(v); } });
+      }
+      comps.push({ cells: cells, size: cells.length });
+    }
+    var TF = [
+      function (r, c) { return [c, -r]; }, function (r, c) { return [-r, -c]; }, function (r, c) { return [-c, r]; },
+      function (r, c) { return [r, -c]; }, function (r, c) { return [-r, c]; }, function (r, c) { return [c, r]; }, function (r, c) { return [-c, -r]; }
+    ];
+    comps.forEach(function (cp) {
+      var L = cp.cells.map(function (x) { return [Math.floor(x / n), x % n]; });
+      var set = {}; L.forEach(function (p) { set[p[0] + ',' + p[1]] = true; });
+      var minR = Math.min.apply(null, L.map(function (p) { return p[0]; })), minC = Math.min.apply(null, L.map(function (p) { return p[1]; }));
+      var syms = [];
+      TF.forEach(function (T) {
+        var TL = L.map(function (p) { return T(p[0], p[1]); });
+        var mr = Math.min.apply(null, TL.map(function (p) { return p[0]; })), mc = Math.min.apply(null, TL.map(function (p) { return p[1]; }));
+        var ok = true, fixed = 0, fixedCell = -1;
+        for (var k = 0; k < TL.length; k++) {
+          var rr = TL[k][0] - mr + minR, cc = TL[k][1] - mc + minC;
+          if (!set[rr + ',' + cc]) { ok = false; break; }
+          if (rr === L[k][0] && cc === L[k][1]) { fixed++; fixedCell = cp.cells[k]; }
+        }
+        if (ok) syms.push({ fixed: fixed, cell: fixedCell });
+      });
+      cp.sym = syms.length > 0;
+      cp.cap = (cp.sym && syms.every(function (s) { return s.fixed === 1; })) ? syms[0].cell : -1;
+    });
+    var INF = 1e9, dist = new Array(N).fill(INF), prevC = new Array(N).fill(-1), done = new Array(N).fill(false);
+    comps.forEach(function (cp) { if (cp.cap >= 0) dist[cp.cap] = 0; });
+    for (var it = 0; it < N; it++) {
+      var best = -1;
+      for (var j = 0; j < N; j++) if (!done[j] && dist[j] < INF && (best < 0 || dist[j] < dist[best])) best = j;
+      if (best < 0) break;
+      done[best] = true;
+      nb(best).forEach(function (v) {
+        if (comp[v] < 0) return;
+        var w = Math.min(comps[comp[best]].size, comps[comp[v]].size);
+        if (dist[best] + w < dist[v]) { dist[v] = dist[best] + w; prevC[v] = best; }
+      });
+    }
+    var empty = 0; arr.forEach(function (x) { if (x === null) empty++; });
+    var nonSym = comps.filter(function (cp) { return !cp.sym; }).length;
+    var checked = st.checked[lvNo];
+    var wrong = {}, wrongCount = 0;
+    Object.keys(LV.clues).forEach(function (k) { if (dist[k] !== LV.clues[k]) { wrong[k] = true; wrongCount++; } });
+    var solved = empty === 0 && nonSym === 0 && wrongCount === 0;
+
+    var traceIdx = st.trace[lvNo], pathSet = {}, traceText = '';
+    if (traceIdx !== null && traceIdx !== undefined) {
+      if (comp[traceIdx] < 0) traceText = 'Paint this cell first.';
+      else if (dist[traceIdx] >= INF) traceText = 'No capitol can be reached from here yet.';
+      else {
+        var costs = [], cur = traceIdx; pathSet[cur] = true;
+        while (prevC[cur] >= 0) { var pv = prevC[cur]; costs.push(Math.min(comps[comp[cur]].size, comps[comp[pv]].size)); cur = pv; pathSet[cur] = true; }
+        traceText = costs.length ? 'Cheapest trip to ★: ' + costs.join(' + ') + ' = ' + dist[traceIdx] : 'This cell is a capitol. Its trip costs 0.';
+      }
+    }
+
+    var thick = '2px solid ' + INK, thin = '1px solid rgba(31,31,31,0.2)';
+    var gameCells = [];
+    for (var ci = 0; ci < N; ci++) {
+      (function (idx) {
+        var r = Math.floor(idx / n), c = idx % n, col = arr[idx], cp = comp[idx];
+        var diffR = c === n - 1 || comp[idx + 1] !== cp, diffB = r === n - 1 || comp[idx + n] !== cp;
+        var s = 'position: relative; width: ' + LV.cs + 'px; height: ' + LV.cs + 'px; box-sizing: border-box; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; font: 700 ' + LV.fs + 'px Roboto, sans-serif; font-variant-numeric: tabular-nums; color: ' + INK + '; cursor: pointer; touch-action: none; user-select: none;' +
+          ' border-top: ' + (r === 0 ? thick : 'none') + '; border-left: ' + (c === 0 ? thick : 'none') + '; border-right: ' + (diffR ? thick : thin) + '; border-bottom: ' + (diffB ? thick : thin) + ';' +
+          ' background-color: ' + (col === null ? '#ffffff' : PAL[col]) + ';';
+        if (cp >= 0 && !comps[cp].sym) s += ' background-image: repeating-linear-gradient(-45deg, rgba(198,40,40,0.55) 0 2px, transparent 2px 6px);';
+        var clue = LV.clues[idx];
+        var isWrong = checked && empty === 0 && clue !== undefined && wrong[idx];
+        var isRight = checked && empty === 0 && clue !== undefined && !wrong[idx];
+        if (pathSet[idx]) s += ' box-shadow: inset 0 0 0 3px #2f3ad1;';
+        else if (isWrong) s += ' box-shadow: inset 0 0 0 3px #c62828;';
+        else if (isRight) s += ' box-shadow: inset 0 0 0 3px #1f7a35;';
+        var isCap = cp >= 0 && comps[cp].cap === idx;
+        gameCells.push({
+          text: clue !== undefined ? String(clue) : '',
+          style: s,
+          starStyle: isCap ? (clue !== undefined ? 'position: absolute; top: 2px; right: 4px; font-size: 11px; line-height: 1;' : 'font-size: ' + (LV.fs + 4) + 'px;') : 'display: none;',
+          sub: isWrong ? (dist[idx] >= INF ? '∞' : String(dist[idx])) : '',
+          subStyle: isWrong ? 'position: absolute; bottom: 2px; right: 4px; font-size: 10px; font-weight: 700; color: #8f2020;' : 'display: none;',
+          label: 'Row ' + (r + 1) + ', column ' + (c + 1) + (clue !== undefined ? ', number ' + clue : '') + (isCap ? ', capitol' : ''),
+          down: function () {
+            if (self.state.tool === 'trace') { self.setLevelField('trace', idx); return; }
+            self.setState({ drag: true }); self.paintCell(idx);
+          },
+          enter: function () { if (self.state.drag && self.state.tool !== 'trace') self.paintCell(idx); }
+        });
+      })(ci);
+    }
+
+    var messages = [];
+    var MS = {
+      info: 'margin: 0; padding: 10px 12px; border-radius: 10px; background: #f3f3f3; color: #1f1f1f; font-size: 14px; line-height: 1.45;',
+      warn: 'margin: 0; padding: 10px 12px; border-radius: 10px; background: #fff4e0; color: #6b3d06; font-size: 14px; line-height: 1.45;',
+      err: 'margin: 0; padding: 10px 12px; border-radius: 10px; background: #fde2df; color: #8f2020; font-size: 14px; line-height: 1.45;',
+      ok: 'margin: 0; padding: 12px 14px; border-radius: 10px; background: #dff3e5; color: #1f6b2d; font-size: 15px; font-weight: 700; line-height: 1.45;'
+    };
+    var answer = 0;
+    if (empty === 0) {
+      for (var rr0 = 0; rr0 < n; rr0++) { var rs = 0; for (var cc0 = 0; cc0 < n; cc0++) rs += comps[comp[rr0 * n + cc0]].size; answer += rs * rs; }
+    }
+    if (empty === N) messages.push({ style: MS.info, text: 'Pick a colour and paint. Touching cells of one colour make one state.' });
+    if (nonSym > 0) messages.push({ style: MS.err, text: nonSym + (nonSym === 1 ? ' state isn’t' : ' states aren’t') + ' symmetric. Look for the red stripes.' });
+    if (empty > 0 && empty < N) messages.push({ style: MS.info, text: empty + (empty === 1 ? ' cell' : ' cells') + ' left to paint.' });
+    if (checked && empty > 0) messages.push({ style: MS.warn, text: 'Paint every cell, then check again.' });
+    if (checked && empty === 0 && !solved && wrongCount > 0) messages.push({ style: MS.err, text: wrongCount + (wrongCount === 1 ? ' number doesn’t' : ' numbers don’t') + ' match. The small red figure is the real trip cost. Try “Trace a trip” on that cell.' });
+    if (checked && solved) messages.push({ style: MS.ok, text: 'Solved! Every number matches. Answer: ' + answer.toLocaleString('en-GB') });
+    if (!checked && empty === 0 && nonSym === 0) messages.push({ style: MS.info, text: 'All cells are painted. Press “Check”.' });
+
+    var levelTabs = [1, 2, 3].map(function (k) {
+      var on = k === lvNo;
+      return {
+        size: LEVELS[k].size, label: LEVELS[k].label, selected: on ? 'true' : 'false',
+        go: function () { self.setState({ level: k }); },
+        style: 'display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-height: 56px; padding: 8px 18px; border-radius: 14px; cursor: pointer; font: 400 16px Roboto, sans-serif; text-align: left; border: ' + (on ? '2px solid #1f1f1f' : '1px solid #d6d6d6') + '; background: ' + (on ? '#1f1f1f' : '#ffffff') + '; color: ' + (on ? '#ffffff' : '#1f1f1f') + ';',
+        subStyle: 'font-size: 13px; color: ' + (on ? '#e6e6e6' : '#5c5c5c') + ';'
+      };
+    });
+    var swatches = PAL.map(function (hex, k) {
+      var on = st.tool === 'paint' && st.color === k;
+      return { label: 'Colour ' + (k + 1), pressed: on ? 'true' : 'false', pick: function () { self.setState({ color: k, tool: 'paint' }); },
+        style: 'width: 36px; height: 36px; border-radius: 10px; cursor: pointer; background: ' + hex + '; border: 1px solid rgba(31,31,31,0.35);' + (on ? ' box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #1f1f1f;' : '') };
+    });
+    function toolStyle(on) { return 'min-height: 40px; padding: 0 14px; border-radius: 10px; font: 700 14px Roboto, sans-serif; cursor: pointer; border: ' + (on ? '2px solid #1f1f1f' : '1px solid #cfcfcf') + '; background: ' + (on ? '#1f1f1f' : '#ffffff') + '; color: ' + (on ? '#ffffff' : '#1f1f1f') + ';'; }
+
+    return {
+      yes: true,
+      heroRows: heroFrame(30),
+      goPuzzle: function () { self.setState({ level: 3 }); self.scrollTo('puzzle'); },
+      tabs: tabs,
+      quick: st.mode === 'quick', detailed: st.mode !== 'quick',
+      quickSel: st.mode === 'quick' ? 'true' : 'false', detSel: st.mode !== 'quick' ? 'true' : 'false',
+      setQuick: function () { self.setState({ mode: 'quick' }); },
+      setDetailed: function () { self.setState({ mode: 'detailed' }); },
+      quickTab: 'min-height: 40px; padding: 0 18px; border-radius: 10px; border: none; cursor: pointer; font: 700 15px Roboto, sans-serif; ' + (st.mode === 'quick' ? 'background: #ffffff; color: #1f1f1f; box-shadow: 0 1px 4px rgba(0,0,0,0.15);' : 'background: transparent; color: #5c5c5c;'),
+      detTab: 'min-height: 40px; padding: 0 18px; border-radius: 10px; border: none; cursor: pointer; font: 700 15px Roboto, sans-serif; ' + (st.mode !== 'quick' ? 'background: #ffffff; color: #1f1f1f; box-shadow: 0 1px 4px rgba(0,0,0,0.15);' : 'background: transparent; color: #5c5c5c;'),
+      quickRows: exFrame('caps'),
+      goWarmup: function () { self.setState({ level: 1 }); self.scrollTo('puzzle'); },
+      s0: step === 0, s1: step === 1, s2: step === 2, s3: step === 3,
+      exRows: step === 0 ? board : exFrame(['', 'caps', 'trip', 'sizes'][step]),
+      capMinis: [step2[1], step2[2]],
+      stepNo: step + 1, stepTitle: STEPS[step].title, stepText: STEPS[step].text, stepPrecise: STEPS[step].precise,
+      prev: function () { self.setState({ step: Math.max(0, step - 1) }); },
+      next: function () { if (step < 3) self.setState({ step: step + 1 }); else { self.setState({ level: 1 }); self.scrollTo('puzzle'); } },
+      prevOff: step === 0, prevStyle: step === 0 ? BTN2OFF : BTN2,
+      nextLabel: step < 3 ? 'Next: ' + STEPS[step + 1].label + ' →' : 'Play the warm-up →',
+      pieces: pieces, board: board, step1: step1, step2: step2, sumRows: sumRows,
+
+      levelTabs: levelTabs, lvTitle: LV.title, lvIntro: LV.intro,
+      gridStyle: 'display: grid; grid-template-columns: repeat(' + n + ', ' + LV.cs + 'px); width: max-content; margin: 0 auto;',
+      gameCells: gameCells,
+      stopDrag: function () { if (self.state.drag) self.setState({ drag: false }); },
+      swatches: swatches,
+      eraseOn: st.tool === 'erase' ? 'true' : 'false', traceOn: st.tool === 'trace' ? 'true' : 'false',
+      eraseStyle: toolStyle(st.tool === 'erase'), traceStyle: toolStyle(st.tool === 'trace'),
+      pickErase: function () { self.setState({ tool: 'erase' }); },
+      pickTrace: function () { self.setState({ tool: st.tool === 'trace' ? 'paint' : 'trace' }); },
+      messages: messages,
+      hasTrace: traceText !== '', traceText: traceText,
+      check: function () { self.setLevelField('checked', true); },
+      clear: function () {
+        var p = Object.assign({}, self.state.paint); p[lvNo] = new Array(N).fill(null);
+        var ch = Object.assign({}, self.state.checked); ch[lvNo] = false;
+        var tr = Object.assign({}, self.state.trace); tr[lvNo] = null;
+        self.setState({ paint: p, checked: ch, trace: tr });
+      },
+      canSolve: !!LV.sol,
+      solve: function () {
+        if (!LV.sol) return;
+        var out = [];
+        LV.sol.forEach(function (row) { row.split('').forEach(function (ch) { out.push(LV.key[ch]); }); });
+        var p = Object.assign({}, self.state.paint); p[lvNo] = out;
+        var ck = Object.assign({}, self.state.checked); ck[lvNo] = true;
+        self.setState({ paint: p, checked: ck });
+      },
+      showNext: checked && solved && lvNo < 3,
+      nextLevelLabel: lvNo === 1 ? 'Next: the 5 × 5 example →' : 'Next: the real puzzle →',
+      nextLevel: function () { self.setState({ level: lvNo + 1 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
